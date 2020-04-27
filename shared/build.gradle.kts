@@ -6,6 +6,7 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    `maven-publish`
 }
 
 android {
@@ -32,6 +33,7 @@ kotlin {
         listOf("-Xobjc-generics", "-Xg0")
 
     version = "1.1"
+    group = "co.touchlab.kampstarter"
 
     sourceSets {
         all {

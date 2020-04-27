@@ -6,6 +6,10 @@ plugins {
     kotlin("android.extensions")
 }
 
+repositories {
+    mavenLocal()
+}
+
 android {
     compileSdkVersion(Versions.compile_sdk)
     buildToolsVersion = Versions.buildToolsVersion
@@ -34,7 +38,7 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
-    implementation(project(":shared"))
+    implementation("co.touchlab.kampstarter:shared:1.1")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation(Deps.material_x)
     implementation(Deps.app_compat_x)
