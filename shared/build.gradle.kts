@@ -17,10 +17,13 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    sourceSets["main"].jniLibs.srcDir( "src/androidMain/jniLibs")
 }
 
 kotlin {
-    android()
+    android {
+      publishAllLibraryVariants()
+    }
     //Revert to just ios() when gradle plugin can properly resolve it
     val onPhone = System.getenv("SDK_NAME")?.startsWith("iphoneos")?:false
     if(onPhone){
